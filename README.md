@@ -1,1 +1,529 @@
 # srijaaa
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inikasrija's Cyber Safety Portfolio</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100%;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #galaxy-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            background: linear-gradient(135deg, #ff69b4, #87ceeb, #9370db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin: 0 0 30px 0;
+            color: #b0b0b0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons button {
+            background: linear-gradient(135deg, #ff69b4, #87ceeb);
+            color: #ffffff;
+            border: none;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hero-buttons button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(135deg, #ffc0cb, #ffb6c1);
+            padding: 80px 20px;
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff69b4, #87ceeb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            flex-shrink: 0;
+        }
+
+        .bio {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .bio h2 {
+            font-size: 36px;
+            margin: 0 0 20px 0;
+            color: #1a1a1a;
+        }
+
+        .bio p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #2a2a2a;
+            margin: 0;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: #1a1a1a;
+            padding: 80px 20px;
+        }
+
+        #skills h2 {
+            text-align: center;
+            font-size: 36px;
+            margin: 0 0 40px 0;
+            color: #ffffff;
+        }
+
+        .skill-tags {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #ff69b4, #87ceeb);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: #0a0a0a;
+            padding: 80px 20px;
+        }
+
+        #projects h2 {
+            text-align: center;
+            font-size: 36px;
+            margin: 0 0 40px 0;
+            color: #ffffff;
+        }
+
+        .project-cards {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: #1a1a1a;
+            border: 2px solid #333333;
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff69b4;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            margin: 0 0 15px 0;
+            color: #ff69b4;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #b0b0b0;
+            margin: 0 0 20px 0;
+        }
+
+        .project-card button {
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+
+        .project-card button:hover {
+            background-color: #444444;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #87ceeb, #9370db);
+            padding: 80px 20px;
+        }
+
+        #contact h2 {
+            text-align: center;
+            font-size: 36px;
+            margin: 0 0 40px 0;
+            color: #ffffff;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin: 15px 0;
+            color: #ffffff;
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #ffffff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            color: #666666;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .bio h2, #skills h2, #projects h2, #contact h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <section id="hero">
+   <canvas id="galaxy-canvas"></canvas>
+   <div class="hero-content">
+    <h1 id="hero-title">Creating a safe and secure cyber security environment.</h1>
+    <p id="hero-subtitle">Inikasrija — Cyber Security Defence and Offence Learner.</p>
+    <div class="hero-buttons"><button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View Projects</button> <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Me</button>
+    </div>
+   </div>
+  </section><!-- About Me Section -->
+  <section id="about">
+   <div class="about-content">
+    <div class="profile-placeholder">
+     👤
+    </div>
+    <div class="bio">
+     <h2 id="about-title">About Me</h2>
+     <p id="about-bio">I'm Inikasrija, a Cyber Safety student with a passion for network security, ethical hacking, and digital forensics.</p>
+    </div>
+   </div>
+  </section><!-- Skills Section -->
+  <section id="skills">
+   <h2>Skills</h2>
+   <div class="skill-tags"><span class="skill-tag">TCP/IP</span> <span class="skill-tag">Subnetting</span> <span class="skill-tag">Wireshark</span> <span class="skill-tag">IDS/IPS</span> <span class="skill-tag">Linux</span> <span class="skill-tag">Python scripting</span> <span class="skill-tag">Network Security Tools</span>
+   </div>
+  </section><!-- Projects Section -->
+  <section id="projects">
+   <h2>Projects</h2>
+   <div class="project-cards">
+    <div class="project-card">
+     <h3>VLAN Segmentation Lab</h3>
+     <p>A project demonstrating VLAN segmentation and security.</p><button onclick="alert('Project details would open here')">View Details</button>
+    </div>
+    <div class="project-card">
+     <h3>Wireshark Packet Analysis</h3>
+     <p>A project analyzing network traffic using Wireshark.</p><button onclick="alert('Project details would open here')">View Details</button>
+    </div>
+    <div class="project-card">
+     <h3>Python Network Scanner</h3>
+     <p>A project building a network scanner using Python.</p><button onclick="alert('Project details would open here')">View Details</button>
+    </div>
+   </div>
+  </section><!-- Contact Section -->
+  <section id="contact">
+   <h2>Get in Touch</h2>
+   <div class="contact-info">
+    <p>Email: <a href="mailto:inikasrija@example.com" id="contact-email-link">inikasrija@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/inikasrija" target="_blank" rel="noopener noreferrer">linkedin.com/in/inikasrija</a></p>
+    <p>GitHub: <a href="https://github.com/inikasrija" target="_blank" rel="noopener noreferrer">github.com/inikasrija</a></p>
+   </div>
+  </section><!-- Footer -->
+  <footer>
+   <p id="footer-text">© 2025 Inikasrija • Cyber Safety Portfolio</p>
+  </footer>
+  <script>
+        const defaultConfig = {
+            hero_title: "Creating a safe and secure cyber security environment.",
+            hero_subtitle: "Inikasrija — Cyber Security Defence and Offence Learner.",
+            about_title: "About Me",
+            about_bio: "I'm Inikasrija, a Cyber Safety student with a passion for network security, ethical hacking, and digital forensics.",
+            contact_email: "inikasrija@example.com",
+            footer_text: "© 2025 Inikasrija • Cyber Safety Portfolio",
+            background_color: "#0a0a0a",
+            accent_color: "#ff69b4",
+            secondary_accent: "#87ceeb",
+            text_color: "#ffffff",
+            card_background: "#1a1a1a",
+            font_family: "Inter",
+            font_size: 16
+        };
+
+        // Galaxy animation
+        const galaxyCanvas = document.getElementById('galaxy-canvas');
+        const ctx = galaxyCanvas.getContext('2d');
+
+        function resizeCanvas() {
+            galaxyCanvas.width = galaxyCanvas.offsetWidth;
+            galaxyCanvas.height = galaxyCanvas.offsetHeight;
+            
+            // Recreate galaxy objects when canvas resizes
+            galaxyObjects.length = 0;
+            for (let i = 0; i < 100; i++) {
+                galaxyObjects.push({
+                    x: Math.random() * galaxyCanvas.width,
+                    y: Math.random() * galaxyCanvas.height,
+                    radius: Math.random() * 2,
+                    speed: Math.random() * 0.5
+                });
+            }
+        }
+
+        // Create galaxy objects
+        const galaxyObjects = [];
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Animate galaxy objects
+        function animateGalaxyObjects() {
+            ctx.clearRect(0, 0, galaxyCanvas.width, galaxyCanvas.height);
+            for (let i = 0; i < galaxyObjects.length; i++) {
+                const galaxyObject = galaxyObjects[i];
+                ctx.beginPath();
+                ctx.arc(galaxyObject.x, galaxyObject.y, galaxyObject.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = '#fff';
+                ctx.fill();
+                galaxyObject.x += galaxyObject.speed;
+                if (galaxyObject.x > galaxyCanvas.width) {
+                    galaxyObject.x = 0;
+                    galaxyObject.y = Math.random() * galaxyCanvas.height;
+                }
+            }
+            requestAnimationFrame(animateGalaxyObjects);
+        }
+
+        animateGalaxyObjects();
+
+        // Element SDK implementation
+        async function onConfigChange(config) {
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseSize = config.font_size || defaultConfig.font_size;
+            const baseFontStack = '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+
+            document.body.style.fontFamily = ${customFont}, ${baseFontStack};
+            document.body.style.fontSize = ${baseSize}px;
+
+            document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+            document.getElementById('hero-title').style.fontSize = ${baseSize * 3}px;
+            
+            document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+            document.getElementById('hero-subtitle').style.fontSize = ${baseSize * 1.25}px;
+            
+            document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+            document.getElementById('about-title').style.fontSize = ${baseSize * 2.25}px;
+            
+            document.getElementById('about-bio').textContent = config.about_bio || defaultConfig.about_bio;
+            document.getElementById('about-bio').style.fontSize = ${baseSize * 1.125}px;
+            
+            const emailLink = document.getElementById('contact-email-link');
+            const email = config.contact_email || defaultConfig.contact_email;
+            emailLink.textContent = email;
+            emailLink.href = mailto:${email};
+            
+            document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+
+            document.body.style.backgroundColor = config.background_color || defaultConfig.background_color;
+            document.body.style.color = config.text_color || defaultConfig.text_color;
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.card_background || defaultConfig.card_background,
+                            set: (value) => {
+                                config.card_background = value;
+                                window.elementSdk.setConfig({ card_background: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.accent_color || defaultConfig.accent_color,
+                            set: (value) => {
+                                config.accent_color = value;
+                                window.elementSdk.setConfig({ accent_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.secondary_accent || defaultConfig.secondary_accent,
+                            set: (value) => {
+                                config.secondary_accent = value;
+                                window.elementSdk.setConfig({ secondary_accent: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: {
+                        get: () => config.font_family || defaultConfig.font_family,
+                        set: (value) => {
+                            config.font_family = value;
+                            window.elementSdk.setConfig({ font_family: value });
+                        }
+                    },
+                    fontSizeable: {
+                        get: () => config.font_size || defaultConfig.font_size,
+                        set: (value) => {
+                            config.font_size = value;
+                            window.elementSdk.setConfig({ font_size: value });
+                        }
+                    }
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["hero_title", config.hero_title || defaultConfig.hero_title],
+                    ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+                    ["about_title", config.about_title || defaultConfig.about_title],
+                    ["about_bio", config.about_bio || defaultConfig.about_bio],
+                    ["contact_email", config.contact_email || defaultConfig.contact_email],
+                    ["footer_text", config.footer_text || defaultConfig.footer_text]
+                ])
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'999b0c37c68dc122',t:'MTc2MjMzMjA0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
